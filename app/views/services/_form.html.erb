@@ -1,0 +1,22 @@
+<div class="col-lg-6">
+  <div class="ibox float-e-margins">
+    <div class="ibox-title">
+      <h2><%= @service.new_record? ?   "Создать новый регион" : "Изменить регион: #{@service.name}" %></h2>
+    </div>
+    <div class="ibox-content">
+      <%= form_for @service do |f| %>
+
+          <div class="form-group">
+            <%= f.text_field :name, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.submit @service.new_record? ?  'Создать' : 'Сохранить', class: 'btn btn-primary btn-outline' %>
+            <%= link_to  'Назад', :back, class: 'btn btn-default' %>
+            <% if @service.id != nil %>
+                <%= link_to 'Удалить' , service_path(@service),  method: :delete, class: 'btn btn-danger pull-right', data: {confirm: 'Вы уверены?'} %>
+            <% end %>
+      <% end %>
+     </div>
+     </div>
+   </div>
+</div>

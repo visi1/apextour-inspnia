@@ -1,0 +1,26 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Новый город</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <%= form_for @town do |f|  %>
+          <div class="modal-body">
+
+            <div class="form-group">
+              <%= f.label 'Название города'%>
+              <%= f.text_field :name, class: "form-control" %>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <%= f.submit @town.new_record? ? 'Сохранить' : 'Создать', class: 'btn btn-primary btn-outline' %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

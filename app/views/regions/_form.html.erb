@@ -1,0 +1,22 @@
+<div class="col-lg-6">
+  <div class="ibox float-e-margins">
+    <div class="ibox-title">
+      <h2><%= @region.new_record? ?   "Создать новый регион" : "Изменить регион: #{@region.name}" %></h2>
+    </div>
+    <div class="ibox-content">
+      <%= form_for @region do |f| %>
+
+          <div class="form-group">
+            <%= f.text_field :name, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.submit @region.new_record? ? 'Создать' : 'Сохранить' , class: 'btn btn-primary btn-outline' %>
+            <%= link_to  'Назад', :back, class: 'btn btn-default' %>
+            <% if @region.id != nil %>
+                <%= link_to 'Удалить' , region_path(@region),  method: :delete, class: 'btn btn-danger pull-right', data: {confirm: 'Вы уверены?'} %>
+            <% end %>
+      <% end %>
+     </div>
+     </div>
+   </div>
+</div>

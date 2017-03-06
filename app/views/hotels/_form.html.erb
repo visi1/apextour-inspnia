@@ -1,0 +1,87 @@
+<div class="row">
+  <div class="col-lg-10">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+       <h2><%= @hotel.new_record? ?   "Создать новый отель" : "Изменить отель: #{@hotel.name}" %></h2>
+      </div>
+      <div class="ibox-content">
+            <div class="tabs-container">
+              <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#tab-1"> Общая информация</a></li>
+                <li class=""><a data-toggle="tab" href="#tab-2">Фото</a></li>
+                <li class=""><a data-toggle="tab" href="#tab-3">Услуги</a></li>
+                <li class=""><a data-toggle="tab" href="#tab-4">Номера и цены</a></li>
+              </ul>
+              <div class="tab-content">
+                <div id="tab-1" class="tab-pane active">
+                  <div class="panel-body">
+                    <%= form_for @hotel do |f| %>
+
+                        <div class="form-group">
+                          <%= f.label 'Регион' %>
+                          <%= f.select :region_id, options_for_select(Region.all.collect {|s| [s.name, s.id] }, @hotel.region_id), {}, {class: "form-control"}%>
+                        </div>
+                        <div class="form-group">
+                          <%= f.label 'Город' %>
+                          <%= f.select :town_id, options_for_select(Town.all.collect {|s| [s.name, s.id] }, @hotel.region_id), {}, {class: "form-control"}%>
+                        </div>
+                        <div class="form-group">
+                          <%= f.label :name %>
+                          <%= f.text_field :name, class: "form-control" %>
+                        </div>
+                        <div class="form-group">
+                          <%= f.label :transcription %>
+                          <%= f.text_area :transcription, class: "form-control" %>
+                        </div>
+                        <div class="form-group">
+                          <%= f.submit @hotel.new_record? ?  'Создать' : 'Сохранить' , class: 'btn btn-primary btn-outline btn-lg' %>
+                          <%= link_to  'Назад', :back, class: 'btn btn-default btn-outline' %>
+                          <% if @hotel.id != nil %>
+                              <%= link_to 'Удалить' , hotel_path(@hotel),  method: :delete, class: 'btn btn-danger  pull-right', data: {confirm: 'Вы уверены?'} %>
+                          <% end %>
+                        </div>
+                    <% end %>
+                  </div>
+                </div>
+                <div id="tab-2" class="tab-pane">
+                  <div class="panel-body">
+                    <strong>Donec quam felis</strong>
+
+                    <p>Thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects
+                      and flies, then I feel the presence of the Almighty, who formed us in his own image, and the breath </p>
+
+                    <p>I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite
+                      sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet.</p>
+                  </div>
+                </div>
+                <div id="tab-3" class="tab-pane">
+                  <div class="panel-body">
+                    <strong>Donec quam felis</strong>
+
+                    <p>Thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects
+                      and flies, then I feel the presence of the Almighty, who formed us in his own image, and the breath </p>
+
+                    <p>I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite
+                      sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet.</p>
+                  </div>
+                </div>
+                <div id="tab-4" class="tab-pane">
+                  <div class="panel-body">
+                    <strong>Donec quam felis</strong>
+
+                    <p>Thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects
+                      and flies, then I feel the presence of the Almighty, who formed us in his own image, and the breath </p>
+
+                    <p>I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite
+                      sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>
+
+
+
