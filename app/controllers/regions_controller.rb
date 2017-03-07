@@ -3,9 +3,7 @@ class RegionsController < ApplicationController
 
   def index
     @regions = Region.all
-
     @region = Region.new
-
 
   end
 
@@ -37,7 +35,7 @@ class RegionsController < ApplicationController
 
   def destroy
     @region.destroy
-    redirect_to @region
+    redirect_to regions_path
   end
 
   private

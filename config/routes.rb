@@ -2,10 +2,14 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root to: 'dashboards#dashboard_1'
+
+
   resources :hotels
   resources :regions
   resources :towns
   resources :services
+
+
   # All routes
   get "dashboards/dashboard_1"
   get "dashboards/dashboard_2"

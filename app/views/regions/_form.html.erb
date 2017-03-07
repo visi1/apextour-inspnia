@@ -14,6 +14,7 @@
             <%= link_to  'Назад', :back, class: 'btn btn-default' %>
             <% if @region.id != nil %>
                 <%= link_to 'Удалить' , region_path(@region),  method: :delete, class: 'btn btn-danger pull-right', data: {confirm: 'Вы уверены?'} %>
+
             <% end %>
       <% end %>
      </div>

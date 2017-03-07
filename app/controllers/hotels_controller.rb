@@ -9,6 +9,7 @@ class HotelsController < ApplicationController
 
   def new
     @hotel = Hotel.new
+    @services = Service.all
   end
 
   def show
@@ -16,6 +17,7 @@ class HotelsController < ApplicationController
 
   def create
     @hotel = Hotel.new(hotel_param)
+
     if @hotel.save
       redirect_to hotels_path
     else
@@ -24,6 +26,7 @@ class HotelsController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
@@ -43,6 +46,6 @@ class HotelsController < ApplicationController
     end
 
     def hotel_param
-      params.require(:hotel).permit(:region_id, :town_id, :name, :transcription)
+      params.require(:hotel).permit(:region_id, :town_id, :name, :transcription, service_ids: [])
     end
 end
