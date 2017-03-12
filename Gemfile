@@ -10,6 +10,13 @@ end
 gem 'rails', '~> 5.0.2'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-rails'
+gem "paperclip", "~> 4.1"
+
+
+#imageUpload
+gem 'carrierwave'
+gem 'mini_magick'
+
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'

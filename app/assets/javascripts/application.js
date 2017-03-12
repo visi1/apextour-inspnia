@@ -14,6 +14,7 @@
 //= require inspinia.js
 //= require jquery
 //= require jquery_ujs
+//= require dropzone/dropzone
 //= require_tree .
 //= require bootstrap-sprockets
 

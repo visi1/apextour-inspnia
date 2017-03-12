@@ -1,5 +1,6 @@
 class HotelsController < ApplicationController
-
+  skip_before_filter :verify_authenticity_token
+  protect_from_forgery prepend: true, with: :exception
   before_action :set_hotel, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -30,10 +31,14 @@ class HotelsController < ApplicationController
   end
 
   def update
+
     if @hotel.update_attributes(hotel_param)
+
       redirect_to hotels_path
     end
   end
+
+
 
   def destroy
     @hotel.destroy
@@ -41,11 +46,16 @@ class HotelsController < ApplicationController
   end
 
   private
+
+
     def set_hotel
       @hotel = Hotel.find(params[:id])
     end
 
     def hotel_param
-      params.require(:hotel).permit(:region_id, :town_id, :name, :transcription, service_ids: [])
+      @hotel
+      params.require(:hotel).permit(:region_id, :town_id, :name, :transcription, {images: []}, {service_ids: []})
     end
+
+
 end
