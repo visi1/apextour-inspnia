@@ -44,6 +44,6 @@ class TownsController < ApplicationController
     end
 
     def town_param
-      params.require(:town).permit(:name)
+      params.require(:town).permit(:name, :region_id)
     end
 end

@@ -230,7 +230,11 @@
       <DataType>DATETIME(0,-1)|12</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="63" parent="11">
+    <column id="63" parent="11" name="region_id">
+      <Position>4</Position>
+      <DataType>INTEGER(0,-1)|4</DataType>
+    </column>
+    <key id="64" parent="11">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>

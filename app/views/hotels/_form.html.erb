@@ -27,11 +27,12 @@
 
                             <div class="form-group">
                               <%= f.label 'Регион' %>
-                              <%= f.collection_select :region_id, Region.all, :id, :name , {prompt: "Выберете регион"}, {class: "form-control"} %>
+
+                              <%= f.collection_select :region_id, Region.order(:name), :id, :name, {prompt: "Выберете регион"}, class: "form-control" , include_blank: true %>
                             </div>
                             <div class="form-group">
                               <%= f.label 'Город' %>
-                              <%= f.collection_select :town_id, Town.all, :id, :name , {prompt: "Выберете город"}, {class: "form-control"} %>
+                              <%= f.grouped_collection_select :town_id, Region.order(:name), :towns, :name, :id, :name,{prompt: "Выберете город"} , class: "form-control" ,include_blank: true %>
                             </div>
                             <div class="form-group">
                               <%= f.label :name %>
@@ -108,5 +109,29 @@
   </div>
 </div>
 
+
+<script>
+    jQuery(function() {
+        var towns;
+        $('#hotel_town_id').parent().hide();
+        towns = $('#hotel_town_id').html();
+        console.log(towns);
+        return $('#hotel_region_id').change(function() {
+            var region, escaped_region, options;
+            region = $('#hotel_region_id :selected').text();
+            escaped_region = region.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
+            options = $(towns).filter("optgroup[label=" + escaped_region + "]").html();
+            console.log(options);
+            if (options) {
+                $('#hotel_town_id').html(options);
+                return $('#hotel_town_id').parent().show();
+            } else {
+                $('#hotel_town_id').empty();
+                return $('#hotel_town_id').parent().hide();
+            }
+        });
+    });
+
+</script>
 
 
