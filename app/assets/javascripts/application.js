@@ -8,6 +8,7 @@
 //= require turbolinks
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui/jquery-ui.min.js
 //= require jquery/jquery-2.1.1.js
 //= require bootstrap-sprockets
 //= require metisMenu/jquery.metisMenu.js
