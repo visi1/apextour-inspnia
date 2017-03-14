@@ -10,4 +10,12 @@
 
 
 
-
+//fileupload style and name file
+$('#basicUploadFile').live('change', function ()
+{
+    for (var i = 0; i < this.files.length; i++)
+    {
+        alert(this.files[i].name);
+        alert(this.files.item(i).name); // alternatively
+    }
+});
