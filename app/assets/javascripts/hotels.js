@@ -5,7 +5,7 @@
 //= require jqGrid/jquery.jqGrid.min.js
 //= require jquery-ui/jquery-ui.min.js
 //= require jquery
-
+//= require dynamyc_select.js
 
 
 
