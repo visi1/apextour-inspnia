@@ -4,6 +4,7 @@
 //= require jqGrid/i18n/grid.locale-el.js
 //= require jqGrid/jquery.jqGrid.min.js
 //= require dynamyc_select.js
+//= require datapicker/bootstrap-datepicker.js
 
 
 

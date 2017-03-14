@@ -1,33 +1,52 @@
 <div class="panel-body">
   <div class="nested-fields">
-    <div class="field">
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-    </div>
-    <div class="field">
-      <%= f.label :date_start %>
-      <%= f.date_select :date_start %>
-    </div>
-    <div class="field">
-      <%= f.label :date_finish %>
-      <%= f.date_select :date_finish %>
-    </div>
 
-    <div class="field">
-      <%= f.label :one_person %>
-      <%= f.text_field :one_person %>
-    </div>
+    <div class="row numbers">
+      <div class="field col-sm-4">
+            <%= f.label :name %>
+            <%= f.text_field :name,  class: 'form-control'  %>
+      </div>
 
-    <div class="field">
-      <%= f.label :two_person %>
-      <%= f.text_field :two_person %>
-    </div>
 
-    <div class="field">
-      <%= f.label :additional_space %>
-      <%= f.text_field :additional_space %>
+      <div class="field col-sm-4">
+        <%= f.label :date_start %>
+        <%= f.date_field :date_start, class: 'form-control'%>
+      </div>
+      <div class="field col-sm-4 ">
+        <%= f.label :date_finish %>
+        <%= f.date_field :date_finish, class: 'form-control' %>
+      </div>
     </div>
-    <%= link_to_remove_association "remove number", f %>
+      <h3>Price:</h3>
+    <div class="row numbers ">
 
+      <div class="field col-sm-4">
+        <span class="input-group-addon">
+          <i class="service_icon fa  fa-male"></i>
+        </span>
+        <%= f.text_field :one_person, class: 'form-control' %>
+      </div>
+
+      <div class="field col-sm-4">
+        <span class="input-group-addon">
+          <i class="service_icon fa  fa-male"></i>
+          <i class="service_icon fa  fa-male"></i>
+        </span>
+        <%= f.text_field :two_person, class: 'form-control' %>
+      </div>
+
+      <div class="field col-sm-4">
+        <span class="input-group-addon">
+          <i class="service_icon fa  fa-child"></i>
+        </span>
+        <%= f.text_field :additional_space, class: 'form-control' %>
+      </div>
+    </div>
+      <div class="row numbers">
+
+
+        <%= link_to_remove_association "remove number", f, class: 'btn btn-danger btn-xs' %>
+
+      </div>
   </div>
 </div>

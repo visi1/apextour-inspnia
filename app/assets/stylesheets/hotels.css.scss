@@ -13,3 +13,11 @@
 .editor{
   min-height: 300px;
 }
+.numbers{
+  margin-bottom: 30px;
+  .field{
+    .input-group-addon{
+      border: none;
+    }
+  }
+}
