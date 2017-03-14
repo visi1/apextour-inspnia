@@ -17,6 +17,8 @@ gem "paperclip", "~> 4.1"
 gem 'carrierwave'
 gem 'mini_magick'
 
+gem "cocoon"
+
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'

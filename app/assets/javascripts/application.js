@@ -4,6 +4,7 @@
 // Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
 // or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
 //
+//= require_tree .
 //= require turbolinks
 //= require jquery/jquery-2.1.1.js
 //= require bootstrap-sprockets
@@ -14,8 +15,8 @@
 //= require inspinia.js
 //= require jquery
 //= require jquery_ujs
+//= require cocoon
 //= require dropzone/dropzone
-//= require_tree .
 //= require bootstrap-sprockets
-
+//= require cocoon
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170312185320) do
+ActiveRecord::Schema.define(version: 20170312222630) do
 
   create_table "hotels", force: :cascade do |t|
     t.integer  "region_id"
@@ -27,6 +27,19 @@ ActiveRecord::Schema.define(version: 20170312185320) do
     t.integer "service_id"
     t.index ["hotel_id"], name: "index_hotels_services_on_hotel_id"
     t.index ["service_id"], name: "index_hotels_services_on_service_id"
+  end
+
+  create_table "numbers", force: :cascade do |t|
+    t.string   "name"
+    t.date     "date_start"
+    t.date     "date_finish"
+    t.integer  "one_person"
+    t.integer  "two_person"
+    t.integer  "additional_space"
+    t.integer  "hotel_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["hotel_id"], name: "index_numbers_on_hotel_id"
   end
 
   create_table "regions", force: :cascade do |t|
