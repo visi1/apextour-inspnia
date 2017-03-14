@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  date_start: 2017-03-13
+  date_finish: 2017-03-13
+  one_person: 1
+  two_person: 1
+  additional_space: 1
+  hotel: 
+
+two:
+  name: MyString
+  date_start: 2017-03-13
+  date_finish: 2017-03-13
+  one_person: 1
+  two_person: 1
+  additional_space: 1
+  hotel: 

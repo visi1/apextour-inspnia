@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07eaa2c8-699d-457b-a2e4-0a0c0300c44f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/hotels/_number_fields.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.generators" afterPath="$PROJECT_DIR$/.idea/.generators" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/apextour-inspnia.iml" afterPath="$PROJECT_DIR$/.idea/apextour-inspnia.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/e3cc7aa0-b87b-4ea3-bccf-09f9123de092.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/e3cc7aa0-b87b-4ea3-bccf-09f9123de092.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/number.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20170312222630_create_numbers.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/numbers.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/models/number_test.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/hotels_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/hotels_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/hotel.rb" afterPath="$PROJECT_DIR$/app/models/hotel.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/hotels/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/hotels/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -84,7 +77,7 @@
         <entry file="file://$PROJECT_DIR$/app/views/hotels/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="41" column="45" lean-forward="true" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="45" />
+              <caret line="41" column="45" lean-forward="false" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -323,6 +316,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apextour-inspnia" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apextour-inspnia" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apextour-inspnia" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apextour-inspnia" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrate" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -619,7 +644,7 @@
       <updated>1488648866783</updated>
       <workItem from="1488648869937" duration="52655000" />
       <workItem from="1489062864233" duration="4078000" />
-      <workItem from="1489067154800" duration="60991000" />
+      <workItem from="1489067154800" duration="61820000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1488802037927</created>
@@ -635,11 +660,18 @@
       <option name="project" value="LOCAL" />
       <updated>1489356738904</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add number dynamic form">
+      <created>1489481248035</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1489481248035</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117724000" />
+    <option name="totallyTimeSpent" value="118553000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -654,7 +686,7 @@
     <frame x="-1" y="0" width="1796" height="1052" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17741935" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22465438" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293348" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24193548" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -701,7 +733,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init commit" />
     <MESSAGE value="photo add to hotel" />
-    <option name="LAST_COMMIT_MESSAGE" value="photo add to hotel" />
+    <MESSAGE value="add number dynamic form" />
+    <option name="LAST_COMMIT_MESSAGE" value="add number dynamic form" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1127,7 +1160,7 @@
     <entry file="file://$PROJECT_DIR$/app/views/hotels/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="41" column="45" lean-forward="true" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="45" />
+          <caret line="41" column="45" lean-forward="false" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="45" />
           <folding />
         </state>
       </provider>
