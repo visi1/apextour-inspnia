@@ -18,6 +18,7 @@
 //= require cocoon
 //= require bootstrap-sprockets
 //= require cocoon
+//= require trix
 
 
 

@@ -5,29 +5,19 @@
        <h2><%= @hotel.new_record? ?   "Создать новый отель" : "Изменить отель: #{@hotel.name}" %></h2>
       </div>
       <div class="ibox-content">
+        <%= form_for @hotel do |f| %>
             <div class="tabs-container">
-              <%= form_for @hotel do |f| %>
-              <%= f.submit @hotel.new_record? ?  'Создать' : 'Сохранить' , class: 'btn btn-primary btn-outline btn-lg pull-right' %>
-              <%= link_to  'Назад', :back, class: 'btn btn-default btn-outline pull-right' %>
-              <% if @hotel.id != nil %>
-                  <%= link_to 'Удалить' , hotel_path(@hotel),  method: :delete, class: 'btn btn-danger  pull-right', data: {confirm: 'Вы уверены?'} %>
-              <% end %>
               <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#tab-1"> Общая информация</a></li>
                 <li class=""><a data-toggle="tab" href="#tab-2">Фото</a></li>
                 <li class=""><a data-toggle="tab" href="#tab-3">Услуги</a></li>
                 <li class=""><a data-toggle="tab" href="#tab-4">Номера и цены</a></li>
               </ul>
-
                   <div class="tab-content">
-
                     <div id="tab-1" class="tab-pane active">
                       <div class="panel-body">
-
-
                             <div class="form-group">
                               <%= f.label 'Регион' %>
-
                               <%= f.collection_select :region_id, Region.order(:name), :id, :name, {prompt: "Выберете регион"}, class: "form-control" , include_blank: true %>
                             </div>
                             <div class="form-group">
@@ -40,10 +30,8 @@
                             </div>
                             <div class="form-group">
                               <%= f.label :transcription %>
-                              <%= f.text_area :transcription, class: "form-control" %>
+                              <%= f.trix_editor :transcription, as: :trix_editor , class: "form-control editor" %>
                             </div>
-
-
                     </div>
                   </div>
                   <div id="tab-2" class="tab-pane">
@@ -52,8 +40,6 @@
                         <% @hotel.images.each do |g|%>
                             <a href="<%= image_path("#{g.url}") %>" title="<%= @hotel.name  %>" data-gallery=""><img src="<%= image_path("#{g.url(:thumb)}") %>"></a>
                         <% end %>
-
-
                       <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
                       <div id="blueimp-gallery" class="blueimp-gallery">
                         <div class="slides"></div>
@@ -64,13 +50,8 @@
                         <a class="play-pause"></a>
                         <ol class="indicator"></ol>
                       </div>
-
                     </div>
-
                       <%= f.file_field :images, multiple: true %>
-
-
-
                     </div>
                   </div>
                   <div id="tab-3" class="tab-pane">
@@ -102,17 +83,16 @@
                   </div>
                 </div>
               </div>
-              <% end %>
             </div>
+                  <%= f.submit @hotel.new_record? ?  'Создать' : 'Сохранить' , class: 'btn btn-primary btn-outline ' %>
+                  <%= link_to  'Назад', :back, class: 'btn btn-default btn-outline' %>
+                  <% if @hotel.id != nil %>
+                      <%= link_to 'Удалить' , hotel_path(@hotel),  method: :delete, class: 'btn btn-danger  pull-right', data: {confirm: 'Вы уверены?'} %>
+                  <% end %>
+              <% end %>
           </div>
     </div>
   </div>
 </div>
-
-
-<script>
-
-
-</script>
 
 
