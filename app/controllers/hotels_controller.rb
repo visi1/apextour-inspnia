@@ -58,7 +58,7 @@ class HotelsController < ApplicationController
 
     def hotel_param
       @hotel
-      params.require(:hotel).permit(:region_id, :town_id, :name, :transcription, {images: []}, {service_ids: []}, numbers_attributes: [:id, :name, :date_start, :date_finish, :one_person, :two_person, :additional_space, :_destroy])
+      params.require(:hotel).permit(:region_id, :town_id, :name, :transcription, {images: []}, {service_ids: []}, {numbers_attributes: [:id, :name, :date_start, :date_finish, :one_person, :two_person, :additional_space, :_destroy]}, :address, :latitude, :longitude)
     end
 
 

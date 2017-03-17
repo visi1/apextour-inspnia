@@ -1,4 +1,9 @@
 class Hotel < ApplicationRecord
+  geocoded_by :address1, :latitude  => :latitude, :longitude => :longitude
+  after_validation :geocode
+
+
+
   belongs_to :region
   belongs_to :town
   has_many :numbers
@@ -13,5 +18,10 @@ class Hotel < ApplicationRecord
   #validates
   validates :name, :region_id, :town_id, :transcription, presence: true
 
+  def address1
+    town = Town.find(town_id).name
+    [town , address].compact.join(', ')
+
+  end
 
 end

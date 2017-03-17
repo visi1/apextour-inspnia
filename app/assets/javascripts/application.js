@@ -20,7 +20,7 @@
 //= require bootstrap-sprockets
 //= require cocoon
 //= require trix
-
+//= require gmap3/gmap3.min.js
 
 
 

@@ -17,6 +17,9 @@ gem "paperclip", "~> 4.1"
 gem 'carrierwave'
 gem 'mini_magick'
 
+#googlemaps
+gem 'geocoder'
+
 gem 'cocoon'
 gem 'trix'
 

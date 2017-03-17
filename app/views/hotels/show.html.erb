@@ -40,10 +40,7 @@
           </div>
           </div>
           <div class="col-md-6">
-            <h2>Описание отеля:</h2>
-            <div ng-bind-html='trix'>
-              <%= @hotel.transcription.html_safe %>
-            </div>
+            <div class="map" id="map"></div>
           </div>
         </div>
         <div class="row">
@@ -67,3 +64,17 @@
     </div>
    </div>
 </div>
+<script>
+    $('.map')
+        .gmap3({
+            center:[<%= @hotel.latitude%>, <%= @hotel.longitude%>],
+            zoom: 15
+
+        })
+        .marker([
+            {position:[<%= @hotel.latitude%>, <%= @hotel.longitude%>], icon: 'http://maps.google.com/mapfiles/marker_green.png'},
+        ])
+        .on('click', function (marker) {
+            marker.setIcon('http://maps.google.com/mapfiles/marker_green.png');
+        });
+</script>
