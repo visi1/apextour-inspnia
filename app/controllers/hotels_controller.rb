@@ -20,8 +20,9 @@ class HotelsController < ApplicationController
     @hotel = Hotel.new(hotel_param)
 
     if @hotel.save
-      redirect_to hotels_path
+      redirect_to hotels_path, success: 'Отель успешно создан'
     else
+      flash[:danger] = 'Отель не создан'
       render 'new'
     end
   end
@@ -34,7 +35,10 @@ class HotelsController < ApplicationController
 
     if @hotel.update_attributes(hotel_param)
 
-      redirect_to hotels_path
+      redirect_to hotels_path, success: 'Отель успешно обновлена'
+    else
+      flash[:danger] = 'Отель не обновлен'
+      render :edit
     end
   end
 

@@ -1,7 +1,19 @@
+
+
 <div class="col-lg-6">
   <div class="ibox float-e-margins">
+    <% if @town.errors.any? %>
+        <div class="alert alert-danger">
+          <h5><%= t('common.errors')  %></h5>
+          <ul>
+            <%  @town.errors.full_messages.each do |messanges| %>
+                <li> <%= messanges %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
     <div class="ibox-title">
-      <h2><%= @town.new_record? ?   "Создать новый регион" : "Изменить регион: #{@town.name}" %></h2>
+      <h2><%= @town.new_record? ?   "Создать новый город" : "Изменить регион: #{@town.name}" %></h2>
     </div>
     <div class="ibox-content">
       <%= form_for @town do |f| %>
@@ -12,6 +24,8 @@
           </div>
 
           <div class="form-group">
+
+            <%= f.label :name %>
             <%= f.text_field :name, class: "form-control" %>
           </div>
           <div class="form-group">

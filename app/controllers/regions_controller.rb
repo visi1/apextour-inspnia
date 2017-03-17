@@ -18,8 +18,9 @@ class RegionsController < ApplicationController
   def create
     @region = Region.new(region_param)
     if @region.save
-      redirect_to @region
+      redirect_to @region, success: 'Регион успешно создан'
     else
+      flash[:danger] = 'Регион не создан'
       render 'new'
     end
   end
@@ -29,7 +30,10 @@ class RegionsController < ApplicationController
 
   def update
     if @region.update_attributes(region_param)
-      redirect_to regions_path
+      redirect_to regions_path, success: 'Город успешно обновлена'
+    else
+      flash[:danger] = 'Город не обновлен'
+      render :edit
     end
   end
 

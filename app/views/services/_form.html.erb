@@ -1,5 +1,15 @@
 <div class="col-lg-6">
   <div class="ibox float-e-margins">
+    <% if @service.errors.any? %>
+        <div class="alert alert-danger">
+          <h5><%= t('common.errors')  %></h5>
+          <ul>
+            <%  @service.errors.full_messages.each do |messanges| %>
+                <li> <%= messanges %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
     <div class="ibox-title">
       <h2><%= @service.new_record? ?   "Создать новый регион" : "Изменить регион: #{@service.name}" %></h2>
     </div>
@@ -16,7 +26,7 @@
             <%= f.submit @service.new_record? ?  'Создать' : 'Сохранить', class: 'btn btn-primary btn-outline' %>
             <%= link_to  'Назад', :back, class: 'btn btn-default' %>
             <% if @service.id != nil %>
-                <%= link_to 'Удалить' , service_path(service),  method: :delete, class: 'btn btn-danger pull-right', data: {confirm: 'Вы уверены?'} %>
+                <%= link_to 'Удалить' , service_path(@service),  method: :delete, class: 'btn btn-danger pull-right', data: {confirm: 'Вы уверены?'} %>
             <% end %>
       <% end %>
      </div>

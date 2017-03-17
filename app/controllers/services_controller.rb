@@ -20,8 +20,9 @@ class ServicesController < ApplicationController
   def create
     @service = Service.new(service_param)
     if @service.save
-      redirect_to @service
+      redirect_to @service,  success: 'Сервис успешно создан'
     else
+      flash[:danger] = 'Сервис не создан'
       render 'new'
     end
   end
@@ -31,9 +32,13 @@ class ServicesController < ApplicationController
 
   def update
     if @service.update_attributes(service_param)
-      redirect_to services_path
+      redirect_to services_path,  success: 'Сервис успешно обновлена'
+    else
+      flash[:danger] = 'Сервис не обновлен'
+      render :edit
     end
   end
+
 
   def destroy
     @service.destroy

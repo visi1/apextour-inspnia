@@ -18,8 +18,9 @@ class TownsController < ApplicationController
     def create
       @town = Town.new(town_param)
       if @town.save
-        redirect_to @town
+        redirect_to @town, success: 'Город успешно создан'
       else
+        flash[:danger] = 'Город не создан'
         render 'new'
       end
     end
@@ -29,7 +30,10 @@ class TownsController < ApplicationController
 
     def update
       if @town.update_attributes(town_param)
-        redirect_to towns_path
+        redirect_to towns_path, success: 'Город успешно обновлена'
+      else
+        flash[:danger] = 'Город не обновлен'
+        render :edit
       end
     end
 

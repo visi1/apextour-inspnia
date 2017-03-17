@@ -10,5 +10,8 @@ class Hotel < ApplicationRecord
 
   accepts_nested_attributes_for :numbers, reject_if: :all_blank, allow_destroy: true
 
+  #validates
+  validates :name, :region_id, :town_id, :transcription, presence: true
+
 
 end

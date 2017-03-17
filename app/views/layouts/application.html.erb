@@ -40,6 +40,16 @@
             <%= render 'layouts/topnavbar' %>
 
             <!-- Main view  -->
+              <div class="row">
+                <div class="col-md-6">
+                  <% flash.each do |name, message| %>
+                      <div class="alert alert-<%=name %> alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <%= message %>
+                      </div>
+                  <% end %>
+                </div>
+              </div>
             <%= yield %>
 
             <!-- Footer -->
@@ -59,6 +69,7 @@
 
     <!-- Include javascript per-view -->
     <!-- For demo purpose we include javascript in view but you can easily start SeedProject and organize it with Rails asset pipeline as you want -->
+
     <%= yield :javascript %>
 
 </body>

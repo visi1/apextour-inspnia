@@ -1,6 +1,16 @@
 <div class="row">
   <div class="col-lg-10">
     <div class="ibox float-e-margins">
+      <% if @hotel.errors.any? %>
+          <div class="alert alert-danger">
+            <h5><%= t('common.errors')  %></h5>
+            <ul>
+              <%  @hotel.errors.full_messages.each do |messanges| %>
+                  <li> <%= messanges %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
       <div class="ibox-title">
        <h2><%= @hotel.new_record? ?   "Создать новый отель" : "Изменить отель: #{@hotel.name}" %></h2>
       </div>
@@ -83,16 +93,15 @@
                         <% code_to_clone = number.object %>
                         <%= link_to_add_association('Clone', f, :numbers, class: 'btn btn-warning btn-xs ', wrap_object: Proc.new {
                             |new_code| new_code.name = code_to_clone.name;
-                        new_code.date_start=code_to_clone.date_start;
-                        new_code.date_finish=code_to_clone.date_finish;
-                        new_code.one_person=code_to_clone.one_person;
-                        new_code.two_person=code_to_clone.two_person;
-                        new_code.additional_space=code_to_clone.additional_space;
+                                       new_code.date_start = code_to_clone.date_finish;
                         new_code }) %>
                         <%= render 'number_fields', f: number, d: :numbers %>
+
+
                     <% end %>
                     <div class="links">
                       <%= link_to_add_association 'add number', f, :numbers, class: 'btn btn-success btn-xs'%>
+
 
 
                     </div>
