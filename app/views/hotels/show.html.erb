@@ -3,3 +3,67 @@
 <h2><%= @hotel.town %></h2>
 <h3><%= @hotel.transcription %></h3>
 <%= link_to 'Удалить', hotel_path(@hotel), method: :delete, data: {confirm: 'Вы уверены?'} %>
+
+<div class="row">
+  <div class="col-lg-10 col-lg-offset-1">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <h2><%= @hotel.name %></h2>
+      </div>
+      <div class="ibox-content">
+
+
+        <div class="row">
+          <div class="col-md-6">
+          <div class="carousel slide" id="carousel2">
+            <ol class="carousel-indicators">
+              <% @count = 0 %>
+              <% @hotel.images.each do |f| @count += 1 %>
+              <li data-slide-to="<%= @count %>" data-target="#carousel2"></li>
+              <% end %>
+            </ol>
+            <div class="carousel-inner">
+              <% @count = 0 %>
+              <% @hotel.images.each do |f| @count += 1 %>
+                <div class="item <%= "active" if @hotel.images.first == f %>" >
+                  <img alt="image" class="img-responsive" src="<%= image_path("#{f.url}") %>">
+                </div>
+
+              <% end %>
+            </div>
+            <a data-slide="prev" href="#carousel2" class="left carousel-control">
+              <span class="icon-prev"></span>
+            </a>
+            <a data-slide="next" href="#carousel2" class="right carousel-control">
+              <span class="icon-next"></span>
+            </a>
+          </div>
+          </div>
+          <div class="col-md-6">
+            <h2>Описание отеля:</h2>
+            <div ng-bind-html='trix'>
+              <%= @hotel.transcription.html_safe %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Описание отеля:</h2>
+            <div ng-bind-html='trix'>
+              <%= @hotel.transcription.html_safe %>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+        Расположение
+        Сервисы
+
+      </div>
+    </div>
+   </div>
+</div>

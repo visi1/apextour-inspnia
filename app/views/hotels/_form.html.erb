@@ -48,7 +48,7 @@
                     <div class="panel-body">
                       <div class="lightBoxGallery">
                         <% @hotel.images.each do |g|%>
-                            <a href="<%= image_path("#{g.url}") %>" title="<%= @hotel.name  %>" data-gallery=""><img src="<%= image_path("#{g.url(:thumb)}") %>"></a>
+                              <a href="<%= image_path("#{g.url}") %>" title="<%= @hotel.name  %>" data-gallery=""><img src="<%= image_path("#{g.url(:thumb)}") %>"></a>
                         <% end %>
                       <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
                       <div id="blueimp-gallery" class="blueimp-gallery">
